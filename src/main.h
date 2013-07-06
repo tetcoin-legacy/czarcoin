@@ -45,11 +45,9 @@ static const unsigned int BLOCKFILE_CHUNK_SIZE = 0x1000000; // 16 MiB
 static const unsigned int UNDOFILE_CHUNK_SIZE = 0x100000; // 1 MiB
 /** Fake height value used in CCoins to signify they are only in the memory pool (since 0.8) */
 static const unsigned int MEMPOOL_HEIGHT = 0x7FFFFFFF;
-/** Default minimum fee per KB for reference clients */
-static const int64 STANDARD_KB_FEE = 10000000;
 /** Dust Soft Limit, allowed with additional fee per output */
 static const int64 DUST_SOFT_LIMIT = 1000000; // 0.01 LTC
-/** Dust Hard Limit, blocked from relay/mining, ignored as wallet inputs */
+/** Dust Hard Limit, ignored as wallet inputs */
 static const int64 DUST_HARD_LIMIT = 10000;   // 0.0001 LTC mininput
 /** No amount larger than this (in satoshi) is valid */
 static const int64 MAX_MONEY = 84000000 * COIN;
