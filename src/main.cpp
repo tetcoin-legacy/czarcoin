@@ -1237,7 +1237,8 @@ void static InvalidChainFound(CBlockIndex* pindexNew)
     printf("InvalidChainFound:  current best=%s  height=%d  log2_work=%.8g  date=%s\n",
       hashBestChain.ToString().c_str(), nBestHeight, log(nBestChainWork.getdouble())/log(2.0),
       DateTimeStrFormat("%Y-%m-%d %H:%M:%S", pindexBest->GetBlockTime()).c_str());
-    CheckForkWarningConditions();
+    if (pindexBest && nBestInvalidWork > nBestChainWork + (pindexBest->GetBlockWork() * 6).getuint256())
+        printf("InvalidChainFound: Warning: Displayed transactions may not be correct! You may need to upgrade, or other nodes may need to upgrade.\n");
 }
 
 void static InvalidBlockFound(CBlockIndex *pindex) {
@@ -1967,14 +1968,11 @@ bool CBlock::AddToBlockIndex(CValidationState &state, const CDiskBlockPos &pos)
 
     if (pindexNew == pindexBest)
     {
-        // Clear fork warning if its no longer applicable
-        CheckForkWarningConditions();
         // Notify UI to display prev block's coinbase if it was ours
         static uint256 hashPrevBestCoinBase;
         UpdatedTransaction(hashPrevBestCoinBase);
         hashPrevBestCoinBase = GetTxHash(0);
-    } else
-        CheckForkWarningConditionsOnNewFork(pindexNew);
+    }
 
     if (!pblocktree->Flush())
         return state.Abort(_("Failed to sync block index"));
@@ -2993,7 +2991,8 @@ string GetWarnings(string strFor)
         strStatusBar = strMiscWarning;
     }
 
-    if (fLargeWorkForkFound)
+    // Longer invalid proof-of-work chain
+    if (pindexBest && nBestInvalidWork > nBestChainWork + (pindexBest->GetBlockWork() * 6).getuint256())
     {
         nPriority = 2000;
         strStatusBar = strRPC = _("Warning: Displayed transactions may not be correct! You may need to upgrade, or other nodes may need to upgrade.");
