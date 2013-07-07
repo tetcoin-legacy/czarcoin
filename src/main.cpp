@@ -74,7 +74,6 @@ int64 nTransactionFee = 0;
 int64 nMinimumInputValue = DUST_HARD_LIMIT;
 
 
-
 //////////////////////////////////////////////////////////////////////////////
 //
 // dispatching functions
