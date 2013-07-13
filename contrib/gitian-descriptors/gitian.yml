@@ -20,7 +20,7 @@ packages:
 - "libpng12-dev"
 reference_datetime: "2011-01-30 00:00:00"
 remotes:
-- "url": "https://github.com/litecoin-project/litecoin-0.8.git"
+- "url": "https://github.com/litecoin-project/litecoin.git"
   "dir": "litecoin"
 files:
 - "miniupnpc-1.6.tar.gz"
