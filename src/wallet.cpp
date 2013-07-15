@@ -8,6 +8,7 @@
 #include "crypter.h"
 #include "ui_interface.h"
 #include "base58.h"
+#include <boost/version.hpp>
 #include <boost/algorithm/string/replace.hpp>
 
 using namespace std;
