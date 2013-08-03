@@ -546,6 +546,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     fDebug = GetBoolArg("-debug");
     fBenchmark = GetBoolArg("-benchmark");
+    mempool.fChecks = GetBoolArg("-checkmempool", false);
 
     // -par=0 means autodetect, but nScriptCheckThreads==0 means no concurrency
     nScriptCheckThreads = GetArg("-par", 0);
