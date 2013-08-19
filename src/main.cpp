@@ -816,7 +816,7 @@ bool CTxMemPool::accept(CValidationState &state, const CTransaction &tx, bool fC
     return true;
 }
 
-bool CTransaction::AcceptToMemoryPool(CValidationState &state, bool fCheckInputs, bool fLimitFree, bool* pfMissingInputs)
+bool CTransaction::AcceptToMemoryPool(CValidationState &state, bool fCheckInputs, bool fLimitFree, bool* pfMissingInputs) const
 {
     try {
         return mempool.accept(state, *this, fCheckInputs, fLimitFree, pfMissingInputs);
