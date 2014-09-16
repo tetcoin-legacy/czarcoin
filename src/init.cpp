@@ -506,8 +506,8 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     fTestNet = GetBoolArg("-testnet");
     fBloomFilters = GetBoolArg("-bloomfilters", true);
-    if (fBloomFilters)
-        nLocalServices |= NODE_BLOOM;
+    //if (fBloomFilters)
+    //    nLocalServices |= NODE_BLOOM;
 
     if (mapArgs.count("-bind")) {
         // when specifying an explicit binding address, you want to listen on it
