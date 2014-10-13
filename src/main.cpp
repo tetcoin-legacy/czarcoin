@@ -827,16 +827,17 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 50 * COIN;
+    int64 nSubsidy = 0 * COIN;  // 100% Premined
 
     // Subsidy is cut in half every 4 years
-    nSubsidy >>= (nHeight / 840000); // Czarcoin: 840k blocks in ~4 years
+    //nSubsidy >>= (nHeight / 840000); // Czarcoin: 840k blocks in ~4 years
+    if (nHeight == 1){ nSubsidy = 100000000000; }
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 3.5 * 24 * 60 * 60; // Czarcoin: 3.5 days
-static const int64 nTargetSpacing = 2.5 * 60; // Czarcoin: 2.5 minutes
+static const int64 nTargetTimespan = 240; // Czarcoin: 4 minutes
+static const int64 nTargetSpacing = 128; // Czarcoin: 128 Seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -1972,7 +1973,7 @@ bool LoadBlockIndex(bool fAllowNew)
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "NY Times 05/Oct/2011 Steve Jobs, Apple’s Visionary, Dies at 56";
+        const char* pszTimestamp = "...they push the human race forward, and while some may see them as the crazy ones, we see genius, because the ones who are crazy enough to think they can change the world are the ones that do.";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -1984,13 +1985,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1317972665;
+        block.nTime    = 1413169227;
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 2084524493;
 
         if (fTestNet)
         {
-            block.nTime    = 1317798646;
+            block.nTime    = 1413169260;
             block.nNonce   = 385270584;
         }
 
