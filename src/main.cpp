@@ -836,7 +836,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 240; // Czarcoin: 4 minutes
+static const int64 nTargetTimespan = 24000; // Czarcoin: 4 minutes
 static const int64 nTargetSpacing = 128; // Czarcoin: 128 Seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
