@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2");
+uint256 hashGenesisBlock("0x00e5ec8300deee964297d495f366ee7f591578b58f7b9a664cbd1734a581f3cf");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Czarcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1987,7 +1987,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1413169227;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2084524493;
+        block.nNonce   = 2085279603;
 
         if (fTestNet)
         {
@@ -2003,7 +2003,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
-        if (true && block.GetHash() != hashGenesisBlock)
+        if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
