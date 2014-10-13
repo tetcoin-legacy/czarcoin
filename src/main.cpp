@@ -831,7 +831,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
     // Subsidy is cut in half every 4 years
     //nSubsidy >>= (nHeight / 840000); // Czarcoin: 840k blocks in ~4 years
-    if (nHeight == 1){ nSubsidy = 100000000000; }
+    if (nHeight == 1){ nSubsidy = 92233720368; } // Target: 100,000,000,000 + 1% inflation.
 
     return nSubsidy + nFees;
 }
