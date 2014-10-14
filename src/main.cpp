@@ -1942,10 +1942,10 @@ bool LoadBlockIndex(bool fAllowNew)
 {
     if (fTestNet)
     {
-        pchMessageStart[0] = 0x43;
+        pchMessageStart[0] = 0x63;
         pchMessageStart[1] = 0x7a;
-        pchMessageStart[2] = 0x61;
-        pchMessageStart[3] = 0x72;
+        pchMessageStart[2] = 0x72;
+        pchMessageStart[3] = 0x74;
         hashGenesisBlock = uint256("0x800b055d70171d8757ffaa903367876134f87bbe5bc0fd9e4ef0b1b9d7086acf");
     }
 
@@ -2346,7 +2346,7 @@ bool static AlreadyHave(CTxDB& txdb, const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ascii, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfb, 0xc0, 0xb6, 0xdb }; // Czarcoin: increase each by adding 2 to bitcoin's value.
+unsigned char pchMessageStart[4] = { 0x43, 0x7a, 0x61, 0x72 }; // Czarcoin: increase each by adding 2 to bitcoin's value.
 
 
 bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
