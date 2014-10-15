@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x00e5ec8300deee964297d495f366ee7f591578b58f7b9a664cbd1734a581f3cf");
+uint256 hashGenesisBlock("0x5174015f0852af7f62c7f92bd5816facb31580706282580c2b6d82b815aba2de");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Czarcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1977,13 +1977,13 @@ bool LoadBlockIndex(bool fAllowNew)
         
         // Czarcoin Genesis Block:
         // block.nTime = 1413169227
-        // block.nNonce = 2085279603
-        // block.GetHash = 00e5ec8300deee964297d495f366ee7f591578b58f7b9a664cbd1734a581f3cf
-        // CBlock(hash=00e5ec8300deee964297, PoW=0000017be0becc14c84d, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=4f4032b17f, nTime=1413169227, nBits=1e0ffff0, nNonce=2085279603, vtx=1)
-        //   CTransaction(hash=4f4032b17f, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
-        //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-        //   vMerkleTree: 4f4032b17f
+        // block.nNonce = 2085290533
+	// block.GetHash = 5174015f0852af7f62c7f92bd5816facb31580706282580c2b6d82b815aba2de
+	// CBlock(hash=5174015f0852af7f62c7, PoW=000002be5a80d5a7f856, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=340651462c, nTime=1413169227, nBits=1e0ffff0, nNonce=2085290533, vtx=1)
+	//   CTransaction(hash=340651462c, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+	//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
+	//     CTxOut(nValue=0.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+	//   vMerkleTree: 340651462c
         
         // Czarcoin Testnet Genesis Block:
         // block.nTime = 1413169260
