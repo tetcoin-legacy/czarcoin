@@ -1946,7 +1946,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0x7a;
         pchMessageStart[2] = 0x72;
         pchMessageStart[3] = 0x74;
-        hashGenesisBlock = uint256("0x800b055d70171d8757ffaa903367876134f87bbe5bc0fd9e4ef0b1b9d7086acf");
+        hashGenesisBlock = uint256("0x01e335ca6f51c3d9680f551d21923fb68880e36ec86ea1575f57394aabbfc572");
     }
 
     //
@@ -1973,7 +1973,7 @@ bool LoadBlockIndex(bool fAllowNew)
         //   vMerkleTree: 97ddfbbae6
         
         // Czarcoin Merkleroot:
-        // 4f4032b17f2ab15c1cbd5294a18fe186acee6c072140037ef7355b12d93f585a
+        // 340651462c6b2d44f29d5a15af76fa6a1acaee6c7b9d15d1183609a26f9e9548
         
         // Czarcoin Genesis Block:
         // block.nTime = 1413169227
@@ -1987,13 +1987,13 @@ bool LoadBlockIndex(bool fAllowNew)
         
         // Czarcoin Testnet Genesis Block:
         // block.nTime = 1413169260
-        // block.nNonce = 385326153
-        // block.GetHash = 800b055d70171d8757ffaa903367876134f87bbe5bc0fd9e4ef0b1b9d7086acf
-        // CBlock(hash=800b055d70171d8757ff, PoW=0000060df438122d3740, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=4f4032b17f, nTime=1413169260, nBits=1e0ffff0, nNonce=385326153, vtx=1)
-        //   CTransaction(hash=4f4032b17f, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
-        //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-        //   vMerkleTree: 4f4032b17f
+        // block.nNonce = 385520184
+	// block.GetHash = 01e335ca6f51c3d9680f551d21923fb68880e36ec86ea1575f57394aabbfc572
+	// CBlock(hash=01e335ca6f51c3d9680f, PoW=000002617726b1f57324, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=340651462c, nTime=1413169260, nBits=1e0ffff0, nNonce=385520184, vtx=1)
+	//  CTransaction(hash=340651462c, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+	//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
+	//     CTxOut(nValue=0.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+	//   vMerkleTree: 340651462c
 
         // Genesis block
         const char* pszTimestamp = "...they push the human race forward, and while some may see them as the crazy ones, we see genius, because the ones who are crazy enough to think they can change the world are the ones that do.";
@@ -2015,7 +2015,7 @@ bool LoadBlockIndex(bool fAllowNew)
         if (fTestNet)
         {
             block.nTime    = 1413169260;
-            block.nNonce   = 385326153;
+            block.nNonce   = 385520184;
         }
 
         //// debug print
