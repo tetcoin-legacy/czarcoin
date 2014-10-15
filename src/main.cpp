@@ -827,11 +827,13 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 0 * COIN;  // 100% Premined
-
     // Subsidy is cut in half every 4 years
     //nSubsidy >>= (nHeight / 840000); // Czarcoin: 840k blocks in ~4 years
-    if (nHeight == 1){ nSubsidy = 92233720368 * COIN; } // Target: 100,000,000,000 + 1% inflation.
+    if (nHeight == 0){ 
+    	nSubsidy = 92233720368 * COIN; 
+    } else { 
+    	int64 nSubsidy = 0 * COIN;  // 100% Premined // Target: 100,000,000,000 + 1% inflation.
+    }
 
     return nSubsidy + nFees;
 }
@@ -2001,7 +2003,7 @@ bool LoadBlockIndex(bool fAllowNew)
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 0 * COIN;
+        txNew.vout[0].nValue = 92233720368 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
@@ -2026,7 +2028,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
-        if (false && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
