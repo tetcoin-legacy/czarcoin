@@ -2022,7 +2022,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x4f4032b17f2ab15c1cbd5294a18fe186acee6c072140037ef7355b12d93f585a"));
+        assert(block.hashMerkleRoot == uint256("0x340651462c6b2d44f29d5a15af76fa6a1acaee6c7b9d15d1183609a26f9e9548"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
