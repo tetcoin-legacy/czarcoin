@@ -1971,6 +1971,29 @@ bool LoadBlockIndex(bool fAllowNew)
         //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536)
         //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
         //   vMerkleTree: 97ddfbbae6
+        
+        // Czarcoin Merkleroot:
+        // 4f4032b17f2ab15c1cbd5294a18fe186acee6c072140037ef7355b12d93f585a
+        
+        // Czarcoin Genesis Block:
+        // block.nTime = 1413169227
+        // block.nNonce = 2085279603
+        // block.GetHash = 00e5ec8300deee964297d495f366ee7f591578b58f7b9a664cbd1734a581f3cf
+        // CBlock(hash=00e5ec8300deee964297, PoW=0000017be0becc14c84d, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=4f4032b17f, nTime=1413169227, nBits=1e0ffff0, nNonce=2085279603, vtx=1)
+        //   CTransaction(hash=4f4032b17f, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+        //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
+        //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+        //   vMerkleTree: 4f4032b17f
+        
+        // Czarcoin Testnet Genesis Block:
+        // block.nTime = 1413169260
+        // block.nNonce = 385326153
+        // block.GetHash = 800b055d70171d8757ffaa903367876134f87bbe5bc0fd9e4ef0b1b9d7086acf
+        // CBlock(hash=800b055d70171d8757ff, PoW=0000060df438122d3740, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=4f4032b17f, nTime=1413169260, nBits=1e0ffff0, nNonce=385326153, vtx=1)
+        //   CTransaction(hash=4f4032b17f, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+        //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
+        //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+        //   vMerkleTree: 4f4032b17f
 
         // Genesis block
         const char* pszTimestamp = "...they push the human race forward, and while some may see them as the crazy ones, we see genius, because the ones who are crazy enough to think they can change the world are the ones that do.";
