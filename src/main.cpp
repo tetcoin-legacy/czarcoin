@@ -1973,7 +1973,7 @@ bool LoadBlockIndex(bool fAllowNew)
         //   vMerkleTree: 97ddfbbae6
         
         // Czarcoin Merkleroot:
-        // f2a810e3516e62bf4c681939941e8f4442686b75c1cdee56ce3a8fbbc6fe0ae1
+        // adc2a5fbf9b0d5ab9b34fadc992d0d3666907743147b4db694b4218cee5eda13
         
         // Czarcoin Genesis Block:
         // block.nTime = 1413169227
@@ -2022,11 +2022,11 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xf2a810e3516e62bf4c681939941e8f4442686b75c1cdee56ce3a8fbbc6fe0ae1"));
+        assert(block.hashMerkleRoot == uint256("0xadc2a5fbf9b0d5ab9b34fadc992d0d3666907743147b4db694b4218cee5eda13"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
-        if (false && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
