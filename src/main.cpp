@@ -1996,7 +1996,7 @@ bool LoadBlockIndex(bool fAllowNew)
 	//   vMerkleTree: f8357f02a5
 
         // Genesis block
-        const char* pszTimestamp = "...they push the human race forward, and while some may see them as the crazy ones, we see genius, because the ones who are crazy enough to think they can change the world are the ones that do.";
+        const char* pszTimestamp = "...in light of all that has happened, one factor remains: we will inspire.  We will push for the truths that enable and empower.  And we will together discover for all mankind.";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
