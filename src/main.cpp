@@ -1973,7 +1973,7 @@ bool LoadBlockIndex(bool fAllowNew)
         //   vMerkleTree: 97ddfbbae6
         
         // Czarcoin Merkleroot:
-        // cec03f399d1f1c9b13ec3020c05931586edf5acd8582db1422c87e786d174a65
+        // f2a810e3516e62bf4c681939941e8f4442686b75c1cdee56ce3a8fbbc6fe0ae1
         
         // Czarcoin Genesis Block:
         // block.nTime = 1413169227
@@ -2022,7 +2022,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xcec03f399d1f1c9b13ec3020c05931586edf5acd8582db1422c87e786d174a65"));
+        assert(block.hashMerkleRoot == uint256("0xf2a810e3516e62bf4c681939941e8f4442686b75c1cdee56ce3a8fbbc6fe0ae1"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
