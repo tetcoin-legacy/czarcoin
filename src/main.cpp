@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x8b839e350cce8646f60d999ad943aad502adf7fccf1b592c4a5fb17d56d2ee16");
+uint256 hashGenesisBlock("0xad569fe09a08250a47b4313699112d90a00214c703d21fd8c19d7730c6449986");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Czarcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1977,13 +1977,13 @@ bool LoadBlockIndex(bool fAllowNew)
         
         // Czarcoin Genesis Block:
         // block.nTime = 1413169227
-        // block.nNonce = 2086963957
-	// block.GetHash = 8b839e350cce8646f60d999ad943aad502adf7fccf1b592c4a5fb17d56d2ee16
-	// CBlock(hash=8b839e350cce8646f60d, PoW=000000dc2da61ba336b3, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=f8357f02a5, nTime=1413169227, nBits=1e0ffff0, nNonce=2086963957, vtx=1)
-	//   CTransaction(hash=f8357f02a5, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-	//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
+        // block.nNonce = 2088280379
+	// block.GetHash = ad569fe09a08250a47b4313699112d90a00214c703d21fd8c19d7730c6449986
+	// CBlock(hash=ad569fe09a08250a47b4, PoW=0000055795948485b314, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=f2a810e351, nTime=1413169227, nBits=1e0ffff0, nNonce=2088280379, vtx=1)
+	//   CTransaction(hash=f2a810e351, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+	//     CTxIn(COutPoint(0000000000, -1), coinbase 05ffffffff0001044cb02e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6520666163746f722072656d61696e733a2077652077696c6c20696e73706972652e202057652077696c6c207075736820666f72207468652074727574687$
 	//     CTxOut(nValue=100.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-	//   vMerkleTree: f8357f02a5
+	//   vMerkleTree: f2a810e351
         
         // Czarcoin Testnet Genesis Block:
         // block.nTime = 1413169260
@@ -2010,7 +2010,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1413169227;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2086963957;
+        block.nNonce   = 2088280379;
 
         if (fTestNet)
         {
@@ -2026,7 +2026,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
-        if (true && block.GetHash() != hashGenesisBlock)
+        if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
