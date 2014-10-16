@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xad569fe09a08250a47b4313699112d90a00214c703d21fd8c19d7730c6449986");
+uint256 hashGenesisBlock("0x6262f781516c792805148c456857c8af593aa9e0dd17b02b0476ebe56ef8a6ff");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Czarcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1946,7 +1946,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0x7a;
         pchMessageStart[2] = 0x72;
         pchMessageStart[3] = 0x74;
-        hashGenesisBlock = uint256("0x9890b06830d4fad6952f56f2eae839f59be4eef1e44ffacb81b527190271262b");
+        hashGenesisBlock = uint256("0x563904af97cf9f114f6843e6f3686ad5dd9babb70d0275ca1add63c83b30436c");
     }
 
     //
@@ -1977,23 +1977,23 @@ bool LoadBlockIndex(bool fAllowNew)
         
         // Czarcoin Genesis Block:
         // block.nTime = 1413169227
-        // block.nNonce = 2088280379
-	// block.GetHash = ad569fe09a08250a47b4313699112d90a00214c703d21fd8c19d7730c6449986
-	// CBlock(hash=ad569fe09a08250a47b4, PoW=0000055795948485b314, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=f2a810e351, nTime=1413169227, nBits=1e0ffff0, nNonce=2088280379, vtx=1)
-	//   CTransaction(hash=f2a810e351, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-	//     CTxIn(COutPoint(0000000000, -1), coinbase 05ffffffff0001044cb02e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6520666163746f722072656d61696e733a2077652077696c6c20696e73706972652e202057652077696c6c207075736820666f72207468652074727574687$
-	//     CTxOut(nValue=100.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-	//   vMerkleTree: f2a810e351
+        // block.nNonce = 2089077377
+	// block.GetHash = 6262f781516c792805148c456857c8af593aa9e0dd17b02b0476ebe56ef8a6ff
+	// CBlock(hash=6262f781516c79280514, PoW=000003f891ff1a9b3593, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=adc2a5fbf9, nTime=1413169227, nBits=1e0ffff0, nNonce=2089077377, vtx=1)
+	//   CTransaction(hash=adc2a5fbf9, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+	//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01043e2e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6c79206f6e6520666163746f722072656d61696e733a)
+	//     CTxOut(nValue=99.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+	//   vMerkleTree: adc2a5fbf9
         
         // Czarcoin Testnet Genesis Block:
         // block.nTime = 1413169260
-        // block.nNonce = 387706405
-	// block.GetHash = 9890b06830d4fad6952f56f2eae839f59be4eef1e44ffacb81b527190271262b
-	// CBlock(hash=9890b06830d4fad6952f, PoW=000003b82e64236795ea, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=f2a810e351, nTime=1413169260, nBits=1e0ffff0, nNonce=387706405, vtx=1)
-	//   CTransaction(hash=f2a810e351, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-	//     CTxIn(COutPoint(0000000000, -1), coinbase 05ffffffff0001044cb02e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6520666163746f722072656d61696e733a2077652077696c6c20696e73706972652e202057652077696c6c207075736820666f72207468652074727574687$
-	//     CTxOut(nValue=100.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-	//   vMerkleTree: f2a810e351
+	// block.nNonce = 388085848
+	// block.GetHash = 563904af97cf9f114f6843e6f3686ad5dd9babb70d0275ca1add63c83b30436c
+	// CBlock(hash=563904af97cf9f114f68, PoW=000005858f57063ad0eb, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=adc2a5fbf9, nTime=1413169260, nBits=1e0ffff0, nNonce=388085848, vtx=1)
+	//   CTransaction(hash=adc2a5fbf9, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+	//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01043e2e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6c79206f6e6520666163746f722072656d61696e733a)
+	//     CTxOut(nValue=99.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+	//   vMerkleTree: adc2a5fbf9
 
         // Genesis block
         const char* pszTimestamp = "...in light of all that has happened, only one factor remains:";
@@ -2010,12 +2010,12 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1413169227;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2088280379;
+        block.nNonce   = 2089077377;
 
         if (fTestNet)
         {
             block.nTime    = 1413169260;
-            block.nNonce   = 387706405;
+            block.nNonce   = 388085848;
         }
 
         //// debug print
@@ -2026,7 +2026,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
-        if (true && block.GetHash() != hashGenesisBlock)
+        if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
