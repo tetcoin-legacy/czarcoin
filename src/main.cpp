@@ -829,9 +829,9 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 0 * COIN; // 100% Premined
     if (nHeight == 0){ 
-    	nSubsidy = 100 * COIN; 
+    	nSubsidy = 99 * COIN; 
     } else if (nHeight == 1) {
-    	nSubsidy = 92233720268 * COIN;
+    	nSubsidy = 92233720269 * COIN;
 	}
     return nSubsidy + nFees;
 }
@@ -1996,12 +1996,12 @@ bool LoadBlockIndex(bool fAllowNew)
 	//   vMerkleTree: f2a810e351
 
         // Genesis block
-        const char* pszTimestamp = "...in light of all that has happened, one factor remains: we will inspire.  We will push for the truths that enable and empower.  And we will together discover for all mankind.";
+        const char* pszTimestamp = "...in light of all that has happened, only one factor remains:";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
-        txNew.vin[0].scriptSig = CScript() << 4294967295 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 100 * COIN;
+        txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        txNew.vout[0].nValue = 99 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
@@ -2022,7 +2022,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xf2a810e3516e62bf4c681939941e8f4442686b75c1cdee56ce3a8fbbc6fe0ae1"));
+        assert(block.hashMerkleRoot == uint256("0xf13f8ca2da604db35d64fbbc81fb65bb7eb15e17d446d886a48fcaf3a7f7928e"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         // if set to true will mine a genesis block upon the next time the program is run–beginning with the nNonce in the code 
