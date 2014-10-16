@@ -1946,7 +1946,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0x7a;
         pchMessageStart[2] = 0x72;
         pchMessageStart[3] = 0x74;
-        hashGenesisBlock = uint256("0xccb01f65b0b7a6a5bc9151aa66ca5dfcce2bd463691a3b325341f6dfa5f95409");
+        hashGenesisBlock = uint256("0x9890b06830d4fad6952f56f2eae839f59be4eef1e44ffacb81b527190271262b");
     }
 
     //
@@ -1987,13 +1987,13 @@ bool LoadBlockIndex(bool fAllowNew)
         
         // Czarcoin Testnet Genesis Block:
         // block.nTime = 1413169260
-        // block.nNonce = 386109994
-	// block.GetHash = ccb01f65b0b7a6a5bc9151aa66ca5dfcce2bd463691a3b325341f6dfa5f95409
-	// CBlock(hash=ccb01f65b0b7a6a5bc91, PoW=00000b5e009bfa0d39c6, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=f8357f02a5, nTime=1413169260, nBits=1e0ffff0, nNonce=386109994, vtx=1)
-	//   CTransaction(hash=f8357f02a5, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-	//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044cc12e2e2e746865792070757368207468652068756d616e207261636520666f72776172642c20616e64207768696c6520736f6d65206d617920736565207468656d20617320746865206372617a79206f6e65732c207765207365652067656e6975732c20626563617$
+        // block.nNonce = 387706405
+	// block.GetHash = 9890b06830d4fad6952f56f2eae839f59be4eef1e44ffacb81b527190271262b
+	// CBlock(hash=9890b06830d4fad6952f, PoW=000003b82e64236795ea, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=f2a810e351, nTime=1413169260, nBits=1e0ffff0, nNonce=387706405, vtx=1)
+	//   CTransaction(hash=f2a810e351, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+	//     CTxIn(COutPoint(0000000000, -1), coinbase 05ffffffff0001044cb02e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6520666163746f722072656d61696e733a2077652077696c6c20696e73706972652e202057652077696c6c207075736820666f72207468652074727574687$
 	//     CTxOut(nValue=100.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-	//   vMerkleTree: f8357f02a5
+	//   vMerkleTree: f2a810e351
 
         // Genesis block
         const char* pszTimestamp = "...in light of all that has happened, one factor remains: we will inspire.  We will push for the truths that enable and empower.  And we will together discover for all mankind.";
@@ -2015,7 +2015,7 @@ bool LoadBlockIndex(bool fAllowNew)
         if (fTestNet)
         {
             block.nTime    = 1413169260;
-            block.nNonce   = 386109994;
+            block.nNonce   = 387706405;
         }
 
         //// debug print
