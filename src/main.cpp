@@ -30,7 +30,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2");
+uint256 hashGenesisBlock("0x26386e3d1dfe042576122eef381d662551f33d68eb29e3a3fb5fd0cd5f25788e");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Czarcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2034,6 +2034,16 @@ bool LoadBlockIndex(bool fAllowNew)
 		//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01043e2e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6c79206f6e6520666163746f722072656d61696e733a)
 		//     CTxOut(nValue=99.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
 		//   vMerkleTree: adc2a5fbf9
+		
+		// Czarcoin Twin Genesis Block
+		// block.nTime = 1413169227
+		// block.nNonce = 2084732958
+		// block.GetHash = 26386e3d1dfe042576122eef381d662551f33d68eb29e3a3fb5fd0cd5f25788e
+		// CBlock(hash=26386e3d1dfe04257612, PoW=00000372a7895841fc26, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=adc2a5fbf9, nTime=1413169227, nBits=1e0ffff0, nNonce=2084732958, vtx=1)
+		//   CTransaction(hash=adc2a5fbf9, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+		//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01043e2e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6c79206f6e6520666163746f722072656d61696e733a)
+		//     CTxOut(nValue=99.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+		//   vMerkleTree: adc2a5fbf9
 
         // Genesis block
         const char* pszTimestamp = "...in light of all that has happened, only one factor remains:";
@@ -2050,7 +2060,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1413169227;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2084524493;
+        block.nNonce   = 2084732958;
 
         if (fTestNet)
         {
