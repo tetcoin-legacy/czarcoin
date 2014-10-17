@@ -1996,7 +1996,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0x7a;
         pchMessageStart[2] = 0x72;
         pchMessageStart[3] = 0x74;
-        hashGenesisBlock = uint256("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f");
+        hashGenesisBlock = uint256("0xbb43407716677ded9c2c32cf82ecb3c26b2d24a552dbcb4d53257a9f4b32178a");
     }
 
     //
@@ -2024,6 +2024,16 @@ bool LoadBlockIndex(bool fAllowNew)
         
         // Czarcoin MerkleRoot
         // adc2a5fbf9b0d5ab9b34fadc992d0d3666907743147b4db694b4218cee5eda13
+        
+        // Czarcoin Testnet Genesis Block
+        // block.nTime = 1413169260
+		// block.nNonce = 386799647
+		// block.GetHash = bb43407716677ded9c2c32cf82ecb3c26b2d24a552dbcb4d53257a9f4b32178a
+		// CBlock(hash=bb43407716677ded9c2c, PoW=000001e2a3db10347709, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=adc2a5fbf9, nTime=1413169260, nBits=1e0ffff0, nNonce=386799647, vtx=1)
+		//   CTransaction(hash=adc2a5fbf9, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+		//     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01043e2e2e2e696e206c69676874206f6620616c6c2074686174206861732068617070656e65642c206f6e6c79206f6e6520666163746f722072656d61696e733a)
+		//     CTxOut(nValue=99.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
+		//   vMerkleTree: adc2a5fbf9
 
         // Genesis block
         const char* pszTimestamp = "...in light of all that has happened, only one factor remains:";
