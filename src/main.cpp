@@ -1992,7 +1992,7 @@ bool LoadBlockIndex(bool fAllowNew)
 {
     if (fTestNet)
     {
-        pchMessageStart[0] = 0x63;
+        pchMessageStart[0] = 0x63; // czrt
         pchMessageStart[1] = 0x7a;
         pchMessageStart[2] = 0x72;
         pchMessageStart[3] = 0x74;
@@ -2021,6 +2021,9 @@ bool LoadBlockIndex(bool fAllowNew)
         //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536)
         //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
         //   vMerkleTree: 97ddfbbae6
+        
+        // Czarcoin MerkleRoot
+        // adc2a5fbf9b0d5ab9b34fadc992d0d3666907743147b4db694b4218cee5eda13
 
         // Genesis block
         const char* pszTimestamp = "...in light of all that has happened, only one factor remains:";
@@ -2049,10 +2052,10 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(block.hashMerkleRoot == uint256("0xadc2a5fbf9b0d5ab9b34fadc992d0d3666907743147b4db694b4218cee5eda13"));
 
         // If genesis block hash does not match, then generate new genesis hash.
-        if (false && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
