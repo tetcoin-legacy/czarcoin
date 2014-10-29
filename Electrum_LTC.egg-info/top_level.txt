@@ -1,0 +1,3 @@
+electrum_ltc
+electrum_ltc_plugins
+electrum_ltc_gui

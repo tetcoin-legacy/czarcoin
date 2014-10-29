@@ -1,0 +1,3 @@
+slowaes
+ecdsa>=0.9
+ltc_scrypt
