@@ -833,17 +833,19 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 0 * COIN; // 100% Premined
-    if (nHeight == 0){ 
-    	nSubsidy = 99 * COIN; 
+    if (nHeight == 0){
+    	nSubsidy = 99 * COIN;
     } else if (nHeight == 1) {
-    	nSubsidy = 92233720268 * COIN;
-	}
+    	nSubsidy = 224999901 * COIN;
+    } else {
+        nSubsidy = 10;
+    }
     return nSubsidy + nFees;
 }
 
 // static const int64 nTargetTimespan = 3.5 * 24 * 60 * 60; // Litecoin: 3.5 days
 // static const int64 nTargetSpacing = 2.5 * 60; // Litecoin: 2.5 minutes
-static const int64 nTargetTimespan = 240000000; // Czarcoin: 4 minutes
+static const int64 nTargetTimespan = 12800; // Czarcoin: 100 Blocks
 static const int64 nTargetSpacing = 128; // Czarcoin: 128 Seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
