@@ -1093,13 +1093,11 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     } else if (nHeight == 1) {
         nSubsidy = 224999901 * COIN;
     } else {
-        nSubsidy = 10;
+        nSubsidy = 10 * COIN;
     }
     return nSubsidy + nFees;
 }
 
-//static const int64 nTargetTimespan = 3.5 * 24 * 60 * 60; // Czarcoin: 3.5 days
-//static const int64 nTargetSpacing = 2.5 * 60; // Czarcoin: 2.5 minutes
 static const int64 nTargetTimespan = 12800; // Czarcoin: 100 Blocks
 static const int64 nTargetSpacing = 128; // Czarcoin: 128 Seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
