@@ -34,11 +34,21 @@ namespace Checkpoints
     //    timestamp before)
     // + Contains no strange transactions
     // Genesis Livenet: (  0, uint256("0x26386e3d1dfe042576122eef381d662551f33d68eb29e3a3fb5fd0cd5f25788e"))
-    static MapCheckpoints mapCheckpoints =
+    /*static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
 	(     1, uint256("0x000003db92cab08116363d954d4bc16c1771824e0a4f381da4e4b81dca79e58c"))
 	(    10, uint256("0x00000a0c52dfb43237e495a24193a57e00cbcf48e16258f0bcfaba1de9e9725b"))
 	(   100, uint256("0x00000b3c485e86341405ddec93d01f00979c23d7ee1b8c559f0b7a593108c697"))
+        ;*/
+    // Treefunder: Why these were set to the above we will never know
+    static MapCheckpoints mapCheckpoints =
+        boost::assign::map_list_of
+        (     1, uint256("0x97ffe971bfa0d155402ab1814d825c30a5917c16b4b866db989528aa7bee5e71"))
+        (    10, uint256("0xa3ef19e9aa5cb1bf3265357b2e4b1ca4bfe1cdbb13ca726e238bb68aa014edac"))
+        (   100, uint256("0x267409b6d7feff42eae9f5a58e37fe2620bfffda03809713556bd7d3cc3b8eba"))
+        (  1000, uint256("0xf2892fbbe6a074fd74e5c88640e56affa98114cc297ebbe24f147dedc18ebd38"))
+        ( 10000, uint256("0x378c5d48f9528992f645951e37fe4c0929cd559921b5b23dfc0f844d7437cc10"))
+        ( 16833, uint256("0xd58d9da7b5382348f2645834f4fa4b195e9fec56d617a992c44fb222544e4d5b"))
         ;
     static const CCheckpointData data = {
         &mapCheckpoints,
