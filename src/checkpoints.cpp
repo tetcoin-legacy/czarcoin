@@ -51,13 +51,14 @@ namespace Checkpoints
         ( 10000, uint256("0x378c5d48f9528992f645951e37fe4c0929cd559921b5b23dfc0f844d7437cc10"))
         ( 16833, uint256("0xd58d9da7b5382348f2645834f4fa4b195e9fec56d617a992c44fb222544e4d5b"))
         ( 22275, uint256("0x8a035df1542f1efa82c1b1a47920f63d8d7765257b3bf68bc7c300409c6d333b"))
+        ( 22321, uint256("0x614405c05a7821f02d01405ad3be57d2c821601ee7450d18c00660b92036375c"))
         ;
     static const CCheckpointData data = {
         &mapCheckpoints,
-        1420898710, // * UNIX timestamp of last checkpoint block : From 1417994920 to 1420166276 
-        25000,    // * total number of transactions between genesis and last checkpoint
+        1420907188, // * UNIX timestamp of last checkpoint block : From 1417994920 to 1420166276 
+        91606,    // * total number of transactions between genesis and last checkpoint
                     //   (the tx=... number in the SetBestChain debug.log lines)
-        7000.0     // * estimated number of transactions per day after checkpoint
+        5000.0     // * estimated number of transactions per day after checkpoint
     };
 
     // Litecoin Original (   546, uint256("0xa0fea99a6897f531600c8ae53367b126824fd6a847b2b2b73817a95b8e27e602"))
