@@ -11,13 +11,11 @@ What is Czarcoin?
 ----------------
 
 Czarcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
- - 2.5 minute block targets
- - subsidy halves in 840k blocks (~4 years)
- - ~84 million total coins
-
-The rest is the same as Bitcoin.
- - 50 coins per block
- - 2016 blocks to retarget difficulty
+ - 128 Second block targets
+ - Target of 225,000,000 Total Units at 1% inflation
+ - ~100% Premined with fair distribution to the public
+ - 10 CZR Block Reward
+ - 128 Blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
 the Czarcoin client sofware, see http://www.czarcoin.org.
