@@ -265,15 +265,9 @@ struct CExtDiskTxPos : public CDiskTxPos
     unsigned int nHeight;
 
     IMPLEMENT_SERIALIZE(
-        READWRITE(*(CDiskBlockPos*)this);
-        READWRITE(VARINT(nTxOffset));
-    )
-
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(*(CDiskTxPos*)this);
         READWRITE(VARINT(nHeight));
-    }
+    )
 
     CExtDiskTxPos(const CDiskTxPos &pos, int nHeightIn) : CDiskTxPos(pos), nHeight(nHeightIn) {
     }
