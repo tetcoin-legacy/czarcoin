@@ -264,7 +264,10 @@ struct CExtDiskTxPos : public CDiskTxPos
 {
     unsigned int nHeight;
 
-    ADD_SERIALIZE_METHODS;
+    IMPLEMENT_SERIALIZE(
+        READWRITE(*(CDiskBlockPos*)this);
+        READWRITE(VARINT(nTxOffset));
+    )
 
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
